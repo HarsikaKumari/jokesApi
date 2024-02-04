@@ -1,135 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Form Example</title>
-  <style>
-    /* CSS styles */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 50px auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    form {
-      margin-top: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    input[type="text"],
-    input[type="number"] {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-bottom: 10px;
-    }
-
-    input[type="submit"] {
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-
-    .response-area {
-      margin-top: 20px;
-      background-color: #f0f0f0;
-
-      padding: 20px 5px;
-    }
-
-    #get {
-      background-color: #2ecc71;
-    }
-
-    #get:hover {
-      background-color: #27ae60;
-    }
-
-    #post {
-      background-color: #3498db;
-    }
-
-    #post:hover {
-      background-color: #2980b9;
-    }
-
-    #put {
-      background-color: #9b59b6;
-    }
-
-    #put:hover {
-      background-color: #8e44ad;
-    }
-
-    #patch {
-      background-color: #f1c40f;
-    }
-
-    #patch:hover {
-      background-color: #f39c12;
-    }
-
-    #delete {
-      background-color: #e74c3c;
-    }
-
-    #delete:hover {
-      background-color: #c0392b;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/main.css">
+  <title>Make yourself happy!!</title>
 </head>
 
 <body>
   <div class="container">
-    <div class="response-area">
-      <p>
-        
-        <!-- <%#= content %> -->
-      </p>
-    </div>
-    <form id="myForm" method="post">
-      <label for="idInput">Id:</label>
-      <input type="text" id="idInput" name="id">
+    <h1>Let's have a joke by the word you want ✌️</h1>
 
-      <label for="secretInput">Secret:</label>
-      <input type="text" id="secretInput" name="secret">
+    <form action="/" id="form" class="form" method="POST">
+      <select name="flags" class="form-select">
+        <option value="" data-display="Select">Select flags to blacklist:</option>
+        <option value="Nsfw">Nsfw</option>
+        <option value="religious">religious</option>
+        <option value="political">political</option>
+        <option value="racist">racist</option>
+        <option value="sexist">sexist</option>
+        <option value="explicit">explicit</option>
+      </select>
 
-      <label for="scoreInput">Score:</label>
-      <input type="number" id="scoreInput" name="score">
+      <select name="category/categories" class="form-select">
+        <option value="Any" data-display="Select">Select category / categories:</option>
+        <option value="Programming">Programming</option>
+        <option value="Miscellaneous">Misc</option>
+        <option value="Dark">Dark</option>
+        <option value="Pun">Pun</option>
+        <option value="Spooky">Spooky</option>
+        <option value="Christmas">Christmas</option>
+      </select>
 
-      <label for="submit">Route:</label>
-      <input id="get" type="submit" value="GET" formaction="/get-secret">
-      <input id="post" type="submit" value="POST" formaction="/post-secret">
-      <input id="put" type="submit" value="PUT" formaction="/put-secret">
-      <input id="patch" type="submit" value="PATCH" formaction="/patch-secret">
-      <input id="delete" type="submit" value="DELETE" formaction="/delete-secret">
+      <select name="language" class="form-select">
+      <option value="en" data-display="Select">English</option>
+        <option value="cs">Czech</option>
+        <option value="de">german</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="pt">portuguese</option>
+      </select>
+
+      <input type="text" name="search_string" id="String" placeholder="Search for a joke that
+      contains this search string:">
+      <button type="submit" class="form-submit">Send request</button>
     </form>
+   
   </div>
+
 </body>
 
 </html>
