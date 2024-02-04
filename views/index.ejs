@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/main.css">
-  <title>Make yourself happy!!</title>
+  <title>Make yourself laugh!!</title>
 </head>
 
 <body>
@@ -46,6 +46,40 @@
       contains this search string:">
       <button type="submit" class="form-submit">Send request</button>
     </form>
+
+    <section id="cards" class="cards">
+      <% if (locals.data) { %>
+       
+        <article class="card-item">
+          <h2 class="card-activity">
+            <%= data.categories %>
+            <!-- Show Activity -->
+          </h2>
+          <div class="card-info">
+            <span class="card-type">
+              <%= data.search_string %>
+              <!-- Show Activity type -->
+            </span>
+            <span class="card-participants">
+              Joke:
+              <%= data.setup %>
+            <%= data.delivery %> 
+              <!-- participants: Show participant number -->
+              <span class="card-number"></span>
+            </span>
+          </div>
+        </article>
+        
+        
+        <% } %>
+        <% if (locals.error) { %>
+          <div id="tag-error" class="tag-error">
+            <%= error %>
+            <!-- Show any errors that were sent from the backend -->
+          </div>
+          <% } %>
+
+    </section>
    
   </div>
 
